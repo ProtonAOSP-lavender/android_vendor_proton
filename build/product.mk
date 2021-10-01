@@ -94,3 +94,8 @@ PRODUCT_PRODUCT_PROPERTIES += \
     ro.com.google.ime.kb_pad_port_r?=4 \
     ro.com.google.ime.kb_pad_land_l?=64 \
     ro.com.google.ime.kb_pad_land_r?=64 \
+
+# QTI Bluetooth
+ifneq ($(TARGET_USE_QTI_BT_STACK),true)
+PRODUCT_SOONG_NAMESPACES += packages/apps/Bluetooth
+endif #TARGET_USE_QTI_BT_STACK

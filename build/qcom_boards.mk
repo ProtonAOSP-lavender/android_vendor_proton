@@ -127,3 +127,10 @@ TARGET_KERNEL_VERSION ?= 4.4
 else ifeq ($(call is-board-platform-in-list,$(3_18_FAMILY)),true)
 TARGET_KERNEL_VERSION ?= 3.18
 endif
+
+# QTI Bluetooth
+ifeq ($(TARGET_USE_QTI_BT_STACK),true)
+PRODUCT_SOONG_NAMESPACES += \
+    vendor/qcom/opensource/commonsys/packages/apps/Bluetooth \
+    vendor/qcom/opensource/commonsys/system/bt/conf
+endif #TARGET_USE_QTI_BT_STACK
